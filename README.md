@@ -2,6 +2,14 @@
 
 Persona Forge 是面向 `SnowLuma + qq-bridge + DSH` 生态的本地单用户人格资产运行时。当前仓库只保留一个人格包：蓝色大肥鱼（DeepSeek娘）。SnowLuma 负责个人 QQ 登录，qq-bridge 负责 OneBot 消息与 DSH 会话桥接，Persona Forge 负责 Prompt 和人格资产。
 
+## 相关项目
+
+- [SnowLuma](https://github.com/SnowLuma/SnowLuma)：个人 QQ 登录和 OneBot v11 网关。
+- [qq-bridge](https://github.com/Derpyu520/qq-bridge)：连接 SnowLuma 与 DSH，负责 QQ 消息收发、会话映射和 QQ 侧运行策略。
+- [DeepSeek DSH](https://github.com/deepseek-ai/deepseek-harness)：负责 Agent、Session、模型调用和 Prompt 运行时。
+
+本仓库不安装或自动控制 SnowLuma，也不替代 qq-bridge 的 QQ 传输层。Persona Forge 负责生产人格资产，并可将人格导出为 qq-bridge 的 `roles/*.md` 角色卡。
+
 ## 已完成的功能
 
 - 人格资产包校验和当前人格原子切换。
