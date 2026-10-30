@@ -54,13 +54,13 @@ DSH（Agent、Session、DeepSeek）
 将本仓库放在 DSH 工作区旁边，然后安装到 DSH profile：
 
 ```powershell
-npx @deepseek-ai/dsh plugin --profile web add D:\vibeCoding\PersonaForge
+npx @deepseek-ai/dsh plugin --profile web add <path-to-persona-forge>
 ```
 
 安装输出中应出现类似以下内容：
 
 ```text
-persona-forge link:D:/vibeCoding/PersonaForge
+persona-forge link:<path-to-persona-forge>
 ```
 
 如果看到 `declares no dsh.bundle — installed as a plain dependency`，说明当前安装的目录还没有更新到包含 `dsh.bundle.patch` 的版本。重新执行上面的安装命令，然后重启 DSH。
@@ -71,9 +71,9 @@ persona-forge link:D:/vibeCoding/PersonaForge
 
 ```yaml
 - id: persona-forge
-  name: D:\vibeCoding\PersonaForge
+  name: <path-to-persona-forge>
   config:
-    root: D:\vibeCoding\PersonaForge
+    root: <path-to-persona-forge>
 ```
 
 `root` 指向 Persona Forge 数据目录，默认使用仓库根目录。
@@ -149,7 +149,7 @@ Persona Forge 负责自动生产人格内容，qq-bridge 负责 QQ、OneBot、ow
 const personaForge = ctx.get('personaForge')
 await personaForge.exportToQqBridge(
   'da-fei-yu',
-  'D:/QQ bridge/qq-bridge-0.2.1-r1',
+  '<path-to-qq-bridge>',
   { roleName: '蓝色大肥鱼', activate: true },
 )
 ```

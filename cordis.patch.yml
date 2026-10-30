@@ -4,4 +4,4 @@
     - id: persona-forge
       name: persona-forge
       config:
-        root: D:/vibeCoding/PersonaForge
+        root: .
