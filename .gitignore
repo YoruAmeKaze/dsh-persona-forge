@@ -8,3 +8,10 @@ personas/*/assets/files/
 personas/*/assets/*
 !personas/*/assets/index.json
 .backup/
+video/
+videos/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
