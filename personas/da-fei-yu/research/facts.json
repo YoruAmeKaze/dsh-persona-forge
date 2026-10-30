@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "id": "community-fan-character",
+      "claim": "DeepSeek娘是社区二创拟人形象，不是 DeepSeek 官方推出的角色。",
+      "sourceIds": ["aigengtu-whale-chan"],
+      "recordedAt": "2026-10-30T00:00:00.000Z",
+      "confidence": "medium"
+    },
+    {
+      "id": "blue-whale-big-fish-meme",
+      "claim": "“蓝色大肥鱼”是围绕蓝鲸 Logo、吃白饭和摸鱼梗形成的角色昵称与表达主题。",
+      "sourceIds": ["aigengtu-whale-chan"],
+      "recordedAt": "2026-10-30T00:00:00.000Z",
+      "confidence": "medium"
+    }
+  ]
+}

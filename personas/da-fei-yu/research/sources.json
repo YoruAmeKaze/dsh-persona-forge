@@ -1,0 +1,15 @@
+{
+  "category": "contemporary",
+  "templates": ["official-site", "official-social", "interview", "news"],
+  "items": [
+    {
+      "id": "aigengtu-whale-chan",
+      "title": "DeepSeek娘百科：蓝色大肥鱼（鲸鱼娘）角色百科",
+      "url": "https://aigengtu.com/zh/whale-chan",
+      "collectedAt": "2026-10-30T00:00:00.000Z",
+      "isPrimary": false,
+      "confidence": "medium",
+      "notes": "社区整理词条；页面说明 DeepSeek 官方未推出拟人形象，角色内容来自社区二创。"
+    }
+  ]
+}
