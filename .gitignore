@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+.dsh-sessions/
+node_modules/
+coverage/
+personas/*/assets/files/
+personas/*/assets/*
+!personas/*/assets/index.json
+.backup/

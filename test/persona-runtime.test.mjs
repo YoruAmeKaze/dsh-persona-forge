@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, writeFile, readFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { composePersonaPrompt, loadActivePersona, readActivePersona, switchActivePersona } from '../src/persona-runtime.mjs';
+import { composePersonaPrompt, loadActivePersona, loadPersona, readActivePersona, switchActivePersona } from '../src/persona-runtime.mjs';
 
 async function fixture() {
   const root = await mkdtemp(path.join(os.tmpdir(), 'persona-forge-'));
@@ -34,4 +34,17 @@ test('rejects stale active state', async () => {
   const activePath = path.join(root, 'active-persona.json');
   await writeFile(activePath, JSON.stringify({ id: 'lu-xun', version: 2 }));
   await assert.rejects(loadActivePersona(root), /stale/);
+});
+
+test('loads optional background, relationships, and layered memory', async () => {
+  const root = await fixture();
+  const dir = path.join(root, 'personas', 'lu-xun');
+  await mkdir(path.join(dir, 'relationships'), { recursive: true });
+  await writeFile(path.join(dir, 'identity', 'background.md'), 'background');
+  await writeFile(path.join(dir, 'relationships', 'characters.json'), JSON.stringify({ items: [{ id: 'friend', name: 'Friend', relation: 'ally' }] }));
+  await writeFile(path.join(dir, 'relationships', 'relationship-rules.md'), 'be kind');
+  const persona = await loadPersona(root, 'lu-xun');
+  assert.equal(persona.background, 'background');
+  assert.equal(persona.relationships.items[0].name, 'Friend');
+  assert.match(composePersonaPrompt(persona), /Relationship rules/);
 });

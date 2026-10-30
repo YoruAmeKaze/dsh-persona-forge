@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "version": 1,
+      "createdAt": "2026-10-30T15:35:54.709Z",
+      "author": "local-user",
+      "note": "v1 原始版本快照（童真化改造前，保留用于回滚）",
+      "snapshot": "versions/v1"
+    },
+    {
+      "version": 2,
+      "createdAt": "2026-10-30T15:48:53.655Z",
+      "author": "local-user",
+      "note": "v2 童真版快照（加入其他 AI 与老板之前）",
+      "snapshot": "versions/v2"
+    }
+  ]
+}

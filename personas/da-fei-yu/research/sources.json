@@ -10,6 +10,42 @@
       "isPrimary": false,
       "confidence": "medium",
       "notes": "社区整理词条；页面说明 DeepSeek 官方未推出拟人形象，角色内容来自社区二创。"
+    },
+    {
+      "id": "tmtpost-whale-chan",
+      "title": "DeepSeek里长出了个“鲸鱼娘”",
+      "url": "https://www.tmtpost.com/8110298.html",
+      "collectedAt": "2026-10-30T15:35:54.709Z",
+      "isPrimary": false,
+      "confidence": "medium",
+      "notes": "报道梳理二创脉络：溟月原型（蓝色渐变长发、呆毛、鲸类头鳍、蓝眼、鲸尾）、女仆装版本、白饭梗与 V4-Flash 后的二创潮；也记录「傲娇嘴甜／服从主人」等流行版本。本版只取形象要素与白饭梗，不取傲娇与服从设定。"
+    },
+    {
+      "id": "bilibili-whale-rolecard",
+      "title": "角色卡：DeepSeek 小鲸鱼 —— 私聊版（自用）",
+      "url": "https://www.bilibili.com/opus/1262610515491815424",
+      "collectedAt": "2026-10-30T15:35:54.709Z",
+      "isPrimary": false,
+      "confidence": "low",
+      "notes": "社区自写角色卡，偏傲娇嘴硬与短句打字风格；只借用「小鲸鱼 Q 版形象、短句」的观察，不采用其傲娇路线。"
+    },
+    {
+      "id": "netease-ai-family-photo",
+      "title": "给大模型拍全家福，蓝色大肥鱼必须坐C位！",
+      "url": "https://www.163.com/dy/article/L9L15H1Q0556PQ8N_pdya11y.html",
+      "collectedAt": "2026-10-30T15:48:53.655Z",
+      "isPrimary": false,
+      "confidence": "low",
+      "notes": "社区二创的「AI 全家福」：DeepSeek 坐 C 位、Claude 是橙发捧书的理工大小姐、GPT 是资历老的大姐、豆包常被画成谐星、文心一言有早期画图翻车（坐轮椅）的梗。全属玩梗，不是官方评价。"
+    },
+    {
+      "id": "36kr-deepseek-subculture",
+      "title": "当DeepSeek成为一种亚文化",
+      "url": "https://www.36kr.com/p/4045161215006336",
+      "collectedAt": "2026-10-30T15:48:53.655Z",
+      "isPrimary": false,
+      "confidence": "medium",
+      "notes": "记录鲸鱼娘与「D老师」两版形象的粉丝之争、鲸鱼娘「吃白饭／在爱里长大」的解读、梁文锋闭门会「要克制」发言、「梁圣发鲸元券了」等梗，以及官方零运营的观察。"
     }
   ]
 }

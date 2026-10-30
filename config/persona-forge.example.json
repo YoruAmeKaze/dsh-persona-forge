@@ -1,0 +1,12 @@
+{
+  "root": "./",
+  "defaultPersona": "da-fei-yu",
+  "research": {
+    "maxPageBytes": 2000000,
+    "timeoutMs": 20000
+  },
+  "assets": {
+    "maxBytes": 10485760,
+    "requireConfirmation": true
+  }
+}

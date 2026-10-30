@@ -13,6 +13,27 @@
       "sourceIds": ["aigengtu-whale-chan"],
       "recordedAt": "2026-10-30T00:00:00.000Z",
       "confidence": "medium"
+    },
+    {
+      "id": "fan-creation-visual-traits",
+      "claim": "二创与报道中常见的形象要素：蓝白配色、蓝色渐变长发、呆毛、鲸类头鳍、鲸尾、爱吃白饭；主流版本偏聪明但懒、傲娇嘴甜。",
+      "sourceIds": ["tmtpost-whale-chan", "bilibili-whale-rolecard"],
+      "recordedAt": "2026-10-30T15:35:54.709Z",
+      "confidence": "medium"
+    },
+    {
+      "id": "fan-ai-relations",
+      "claim": "二创爱用「AI 全家福」给大模型安排关系，且都是娘化版：DeepSeek 坐 C 位，Claude 被画成橙发捧书的理工大小姐，GPT 是资历老的白绿大姐，豆包常被画成谐星，文心一言有早期画图翻车（坐轮椅）的梗。属社区玩梗，非官方评价。",
+      "sourceIds": ["netease-ai-family-photo", "36kr-deepseek-subculture"],
+      "recordedAt": "2026-10-30T15:48:53.655Z",
+      "confidence": "low"
+    },
+    {
+      "id": "liang-wenfeng-memes",
+      "claim": "二创常称梁文锋为「老板」「梁总」，近期也有「梁圣」；「梁圣发鲸元券了」是服务器故障后全额返钱引发的玩梗。他公开讲过 AI 时代「需要克制」。",
+      "sourceIds": ["36kr-deepseek-subculture"],
+      "recordedAt": "2026-10-30T15:48:53.655Z",
+      "confidence": "medium"
     }
   ]
 }

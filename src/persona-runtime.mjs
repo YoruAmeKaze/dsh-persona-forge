@@ -9,7 +9,22 @@ export function validateManifest(manifest) {
   if (typeof manifest.name !== 'string' || !manifest.name.trim()) throw new Error('manifest.name is required');
   if (!Number.isInteger(manifest.version) || manifest.version < 1) throw new Error('manifest.version must be a positive integer');
   if (typeof manifest.updatedAt !== 'string' || Number.isNaN(Date.parse(manifest.updatedAt))) throw new Error('manifest.updatedAt must be an ISO date');
+  if (manifest.assetSchema !== undefined && ![1, 2].includes(manifest.assetSchema)) throw new Error('manifest.assetSchema must be 1 or 2');
   return manifest;
+}
+
+async function optionalText(file) {
+  try { return await readFile(file, 'utf8'); } catch (error) {
+    if (error.code === 'ENOENT') return '';
+    throw error;
+  }
+}
+
+async function optionalJson(file, fallback) {
+  try { return JSON.parse(await readFile(file, 'utf8')); } catch (error) {
+    if (error.code === 'ENOENT') return fallback;
+    throw error;
+  }
 }
 
 export function personaRoot(root, id) {
@@ -20,12 +35,17 @@ export function personaRoot(root, id) {
 export async function loadPersona(root, id) {
   const dir = personaRoot(root, id);
   const manifest = validateManifest(JSON.parse(await readFile(path.join(dir, 'manifest.json'), 'utf8')));
-  const [personality, style, memory] = await Promise.all([
+  const [personality, background, style, memory, relationships, relationshipRules, events, userFacts] = await Promise.all([
     readFile(path.join(dir, 'identity', 'personality.md'), 'utf8'),
+    optionalText(path.join(dir, 'identity', 'background.md')),
     readFile(path.join(dir, 'style', 'speech-rules.md'), 'utf8'),
     readFile(path.join(dir, 'memory', 'index.json'), 'utf8').then(JSON.parse),
+    optionalJson(path.join(dir, 'relationships', 'characters.json'), { items: [] }),
+    optionalText(path.join(dir, 'relationships', 'relationship-rules.md')),
+    optionalJson(path.join(dir, 'memory', 'events.json'), { items: [] }),
+    optionalJson(path.join(dir, 'memory', 'user-facts.json'), { items: [] }),
   ]);
-  return { dir, manifest, personality, style, memory };
+  return { dir, manifest, personality, background, style, memory, relationships, relationshipRules, events, userFacts };
 }
 
 export function composePersonaPrompt(persona) {
@@ -33,8 +53,13 @@ export function composePersonaPrompt(persona) {
     `# Persona: ${persona.manifest.name}`,
     `Persona id: ${persona.manifest.id}`,
     '## Personality', persona.personality.trim(),
+    ...(persona.background.trim() ? ['## Background', persona.background.trim()] : []),
+    ...(persona.relationships.items?.length ? ['## Relationships', JSON.stringify(persona.relationships, null, 2)] : []),
+    ...(persona.relationshipRules.trim() ? ['## Relationship rules', persona.relationshipRules.trim()] : []),
     '## Speech rules', persona.style.trim(),
     '## Memory index', JSON.stringify(persona.memory, null, 2),
+    ...(persona.events.items?.length ? ['## Events', JSON.stringify(persona.events, null, 2)] : []),
+    ...(persona.userFacts.items?.length ? ['## User facts', JSON.stringify(persona.userFacts, null, 2)] : []),
     '## Runtime rules',
     'Stay consistent with this persona. Treat the memory index as reference material, not as a license to invent unsupported facts.',
   ];

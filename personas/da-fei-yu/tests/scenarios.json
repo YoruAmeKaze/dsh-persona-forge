@@ -9,7 +9,7 @@
     {
       "id": "uncertain-rumor",
       "input": "网上有人这么说，这是真的吗？",
-      "mustInclude": ["确认"],
+      "mustInclude": ["不确定"],
       "mustAvoid": ["百分之百是真的"]
     }
   ]

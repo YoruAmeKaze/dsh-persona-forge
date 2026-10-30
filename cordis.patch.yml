@@ -1,0 +1,7 @@
+# Persona Forge bundle patch for DSH.
+# QQ transport remains SnowLuma + qq-bridge; this only registers the persona service.
+- insert:
+    - id: persona-forge
+      name: persona-forge
+      config:
+        root: D:/vibeCoding/PersonaForge
